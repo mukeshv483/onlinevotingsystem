@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    
+
+    
+    
+    
+    
+    <form-beans>
+        <form-bean name="dbconnectionbean" type="hp.dbconnectionbean"/>
+        <form-bean name="Regsvoterbean" type="hp.Regsvoterbean"/>
+       
+        <form-bean name="candidateregbean" type="hp.candidateregbean"/>
+        <form-bean name="NewStrutsActionIndex" type="hp.NewStrutsActionForm"/>
+        <form-bean name="VoterUpdateBean" type="hp.VoterinfoupdateForm"/>
+        
+         <form-bean name="candidateregbean" type="hp.candidateregbean"/>
+          <form-bean name="CanUpdateBean" type="hp.CanUpdateBean"/>
+        
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/index.jsp" name="NewStrutsActionIndex" path="/log5" scope="session" type="hp.NewStrutsAction">
+            
+          <forward name="voter" path="vmain1"/>
+             <forward name="admin" path="adminpage"/>
+               <forward name="candidate" path="canmain"/>
+              <forward name="fail" path="/index.jsp"/>
+        
+        </action>
+        
+        <action path="/admincan" forward="caninfo"/>
+        <action path="/adminvoter" forward="voterinfo"/>
+        
+        
+        
+        
+        <action path="/log" forward="main"/>
+        <action path="/log1" forward="main1"/>
+        <action path="/log2" forward="main2"/>
+        <action path="/log3" forward="main"/>
+        <action path="/log4" forward="main4"/>
+         <action path="/log6" forward="main5"/>
+         <action path="/log7" forward="main6"/>
+           <action path="/log8" forward="main7"/>
+            <action path="/log9" forward="main9"/>
+                 <action path="/log10" forward="main10"/>
+                 <action path="/log11" forward="main11"/>
+           <action path="/log13" forward="main13"/>
+            <action path="/log15" forward="votermain"/>
+            
+            
+        <action path="/voter1" forward="vmainupdate"/>
+          <action path="/voter2" forward="voteradminpage" />
+           <action path="/voter3" forward="voterimagespage" />
+          <action path="/voter4" forward="voterhome" />
+          <action path="/voterout" forward="voterout"/>
+          
+       <!-- 
+       candidate pages forward
+       -->   
+
+  <action input="/CanUpdateInfo.jsp" name="CanUpdateBean" path="/candidateupdate" scope="session" type="hp.CanupdateAction">
+          <forward name="success" path="canmain"/>
+        <forward name="fail" path="/Canupdateinfo.jsp"/>
+               </action>
+ <action path="/can1" forward="cmainupdate" />
+          <action path="/can2" forward="canadminpage" />
+           <action path="/can3" forward="canimagespage" />
+          <action path="/can4" forward="canmain" />
+          <action path="/canout" forward="canout"/>
+          <action path="/log16" forward="canmain"/>
+
+
+          
+          <action input="/Voterupdateinfo.jsp" name="VoterUpdateBean" path="/update" scope="session" type="hp.VoterupdateAction">
+          <forward name="success" path="votermain"/>
+        <forward name="fail" path="/voterHome.jsp"/>
+               </action>
+          
+          <action input="/B.jsp" name="candidateregbean" path="/regcandidate" scope="session" type="hp.candidateregaction">
+          <forward name="success" path="canmain"/>
+        <forward name="fail" path="/CandidateHome.jsp"/>
+               </action>
+          
+          
+          <action input="/A.jsp" name="Regsvoterbean" path="/upload" scope="session" type="hp.Regvoteraction">
+          <forward name="success" path="main"/>
+        <forward name="fail" path="/voterHome.jsp"/>
+        
+        </action>
+        
+        
+          <action input="/B.jsp" name="candidateregbean" path="/add" scope="session" type="hp.candidateregaction">
+         
+          <forward name="suc" path="canmain"/>
+        <forward name="fail" path="/index.jsp"/>
+        
+        </action>
+            <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    
+    <!--  new voter update action-->
+    
+    <action path="/vt1" forward="/voterHome.jsp"/>
+    
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+   <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+   
+  
+</struts-config>

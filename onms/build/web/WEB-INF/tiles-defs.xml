@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+    <definition name="main" path="/Layout.jsp"> 
+        <put name="HEADER"  value="/Header.jsp" />
+        <put name="MENU" value="/Menu.jsp" />
+        <put name="BODY"   value="/Body.jsp" />
+        <put name="FOOTER" value="/Footer.jsp" />
+        
+    </definition>
+    
+    
+     <definition name="AdminMain" path="/Layout.jsp"> 
+        <put name="HEADER"  value="/Header.jsp" />
+        <put name="MENU" value="/AdminMenu.jsp" />
+        <put name="BODY"   value="/AdminHome.jsp" />
+        <put name="FOOTER" value="/Footer.jsp" />
+        
+    </definition>
+    <definition name="adminpage" extends="AdminMain">
+        
+        <put name="BODY"   value="/AdminHome.jsp" />
+       
+ </definition>
+ <definition name="caninfo" extends="AdminMain">
+        
+        <put name="BODY"   value="/Caninfo.jsp" />
+        
+    </definition>
+    <definition name="voterinfo" extends="AdminMain">
+        
+        <put name="BODY"   value="/Voterinfo.jsp" />
+    </definition>
+     <!--
+ 
+ candidaie pages tiles
+ 
+ -->   
+    
+ <definition name="candidatemain" path="/Layout.jsp"> 
+        <put name="HEADER"  value="/Header.jsp" />
+        <put name="MENU" value="/CanMenu.jsp" />
+        <put name="BODY"   value="/Body.jsp" />
+        <put name="FOOTER" value="/Footer.jsp" />
+        
+    </definition>
+<definition name="canmain" extends="candidatemain">
+        
+        <put name="BODY"   value="/CandidateHome.jsp" />
+    </definition>
+   
+   <definition name="cmainupdate" extends="candidatemain">
+        
+        <put name="BODY"   value="/CanUpdateInfo.jsp" />
+    </definition>
+     <definition name="canadminpage" extends="candidatemain">
+        
+        <put name="BODY"   value="/contact.jsp" />
+    </definition>
+     <definition name="canimagespage" extends="candidatemain">
+        
+        <put name="BODY"    value="/gallery.jsp" />
+    </definition>
+ <definition name="canhome" extends="candidatemain">
+        
+        <put name="BODY"    value="/CndidateHome.jsp" />
+    </definition>
+
+    <definition name="canout" extends="main">
+       
+        <put name="BODY"   value="/logout.jsp" />
+       
+    </definition>
+    
+    <definition name="votermain" path="/Layout.jsp"> 
+        <put name="HEADER"  value="/VoterHeader.jsp" />
+        <put name="MENU" value="/VoterMenu.jsp" />
+        <put name="BODY"   value="/Body.jsp" />
+        <put name="FOOTER" value="/Footer.jsp" />
+        
+    </definition>
+<definition name="vmain1" extends="votermain">
+        
+        <put name="BODY"   value="/voterHome.jsp" />
+    </definition>
+   
+   <definition name="vmainupdate" extends="votermain">
+        
+        <put name="BODY"   value="/Voterupdateinfo.jsp" />
+    </definition>
+     <definition name="voteradminpage" extends="votermain">
+        
+        <put name="BODY"   value="/contact.jsp" />
+    </definition>
+     <definition name="voterimagespage" extends="votermain">
+        
+        <put name="BODY"    value="/gallery.jsp" />
+    </definition>
+ <definition name="voterhome" extends="votermain">
+        
+        <put name="BODY"    value="/voterHome.jsp" />
+    </definition>
+
+    <definition name="voterout" extends="main">
+       
+        <put name="BODY"   value="/logout.jsp" />
+       
+    </definition>
+
+    <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+    <definition name="main1" extends="main">
+        
+        <put name="BODY"   value="/A.jsp" />
+    </definition>
+    <definition name="main2" extends="main">
+        
+        <put name="BODY"   value="/B.jsp" />
+    </definition>
+
+    <definition name="main3" extends="main">
+        
+        <put name="BODY"   value="/Layout.jsp" />
+    </definition>
+    <definition name="main4" extends="main">
+        
+        <put name="BODY"   value="/gallery.jsp" />
+    </definition>
+    <definition name="main5" extends="main">
+        
+        <put name="BODY"   value="/contact.jsp" />
+    </definition>
+    <definition name="main6" extends="main">
+        
+        <put name="BODY"   value="/d.jsp" />
+    </definition>
+    <definition name="main7" extends="main">
+        
+        <put name="BODY"   value="/logout.jsp" />
+    </definition>
+    <definition name="main9" extends="main">
+        
+        <put name="BODY"   value="/A.jsp" />
+        </definition>
+        <definition name="main10" extends="main">
+        
+        <put name="BODY"   value="/B.jsp" />
+    
+    </definition>
+       <definition name="main11" extends="main">
+        
+        <put name="BODY"   value="/gallery.jsp" />
+    
+    </definition>
+     <definition name="main13" extends="main">
+        
+        <put name="BODY"   value="/contact.jsp" />
+    
+    </definition>
+    <definition name="main15" extends="main">
+        
+        <put name="BODY"   value="/voterpage.jsp" />
+    </definition>
+    <definition name="main16" extends="main">
+        
+        <put name="BODY"   value="/candidatepage.jsp" />
+    </definition>
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+
+
+
+</tiles-definitions>
